@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.archive.autodetection">class,hbm</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle8iDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		
+		<!-- UAT Environment Start-->
+ 		<property name="hibernate.connection.url">jdbc:oracle:thin:@172.30.1.125:2021/DEVDB</property> 
+		<property name="hibernate.connection.username">UCADMIN</property>
+		<property name="hibernate.connection.password">UCADMIN</property>   
+		<!-- UAT Environment End-->
+		
+		
+		
+		<!-- commented by ajeet on 06/06/2023 -->
+		 <property name="hibernate.connection.pool_size">1</property>
+ 		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+ 		<property name="hibernate.c3p0.acquire_increment">1</property>
+ 		<property name="hibernate.c3p0.max_statements">0</property>
+ 		<property name="hibernate.c3p0.min_size">1</property>
+ 		<property name="hibernate.c3p0.max_size">50</property>
+ 		<property name="hibernate.c3p0.timeout">120</property>
+ 		<property name="hibernate.c3p0.maxIdleTime">120</property>  
+ 		<property name="hibernate.c3p0.idle_test_period">20</property> 	 
+			  
+			<mapping class="com.sidbi.domain.CustomerBeanDomain"/>
+			<mapping class="com.sidbi.domain.SchoolScholarshipBillUpload"/>
+			<mapping class="com.sidbi.domain.FinancialAssistDataDomain"/>
+			<mapping class="com.sidbi.domain.RvmeBeanDomain"/>
+			<mapping class="com.sidbi.domain.MobileClaimDomain"/>
+			<mapping class="com.sidbi.domain.MobileClaimReimDomain"/>
+			<mapping class="com.sidbi.domain.MobChargesDomain"/>
+			<mapping class="com.sidbi.domain.LaptopClaimDomain"/>
+			<mapping class="com.sidbi.domain.TabletClaimDomain"/>
+			<mapping class="com.sidbi.domain.ReimConsentDomain"/>
+			<mapping class="com.sidbi.domain.LoginDetailDomain"/>
+			
+	</session-factory>
+</hibernate-configuration>
